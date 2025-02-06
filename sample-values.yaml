@@ -83,7 +83,7 @@ deploykf_dependencies:
   ##             cert-manager
   ## --------------------------------------
   cert_manager:
-    enabled: true
+    enabled: false #true
     namespace: cert-manager
 
     ## extra manifests
@@ -99,14 +99,14 @@ deploykf_dependencies:
     ##
     clusterIssuer:
       enabled: true
-      issuerName: deploykf-gateway-issuer
+      issuerName: letsencrypt-prod #deploykf-gateway-issuer
 
 
   ## --------------------------------------
   ##                 istio
   ## --------------------------------------
   istio:
-    enabled: true
+    enabled: false
     namespace: istio-system
 
 
@@ -237,7 +237,7 @@ deploykf_core:
       ## the hostname that the gateway will listen on
       ##  - subdomains of this hostname may also be used, depending on which apps are enabled
       ##
-      hostname: deploykf.example.com
+      hostname: kf.bjoernellens1.com #deploykf.example.com
 
       ## the ports that the gateway will listen on
       ##  - these are the "internal" ports which the gateway use, and can be different
